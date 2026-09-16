@@ -1,25 +1,4 @@
-# Netlify Configuration File
-# Save this as: netlify.toml (root of your project)
-
 [build]
-  # Directory containing your HTML/CSS/JS files
-  publish = "."
-  
-  # Directory containing Netlify Functions
-  functions = "netlify/functions"
-  
-  # Command to run during build (if needed)
-  # command = "npm run build"
-
-[functions]
-  # External Node modules to bundle
-  external_node_modules = ["nodemailer"]
-  
-  # Node bundler to use
-  node_bundler = "esbuild"
-  
-  # Function timeout (milliseconds)
-  [build]
   functions = "netlify/functions"
   publish = "."
 
@@ -54,46 +33,6 @@
   [headers.values]
     Cache-Control = "public, max-age=7776000"
 
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
-# Redirects for API calls
-[[redirects]]
-  from = "/.netlify/functions/:name"
-  to = "/.netlify/functions/:name"
-  status = 200
-
-# Cache headers for static files
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
-    X-Frame-Options = "SAMEORIGIN"
-    X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
-# Cache CSS files for 30 days
-[[headers]]
-  for = "/css/*"
-  [headers.values]
-    Cache-Control = "public, max-age=2592000"
-
-# Cache JS files for 30 days
-[[headers]]
-  for = "/js/*"
-  [headers.values]
-    Cache-Control = "public, max-age=2592000"
-
-# Cache images for 90 days
-[[headers]]
-  for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=7776000"
-
-# Do not cache HTML
 [[headers]]
   for = "/*.html"
   [headers.values]
