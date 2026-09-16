@@ -19,7 +19,45 @@
   node_bundler = "esbuild"
   
   # Function timeout (milliseconds)
-  timeout = 30000
+  [build]
+  functions = "netlify/functions"
+  publish = "."
+
+[functions]
+  external_node_modules = ["nodemailer"]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/.netlify/functions/:name"
+  to = "/.netlify/functions/:name"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=7776000"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
 
 # Redirects for API calls
 [[redirects]]
