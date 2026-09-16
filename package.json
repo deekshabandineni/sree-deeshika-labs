@@ -1,0 +1,28 @@
+{
+  "name": "sree-deeshika-labs-website",
+  "version": "1.0.0",
+  "description": "Professional website for Sree Deeshika Labs - Pharmaceutical Testing & Trading",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build required'",
+    "install-deps": "npm install"
+  },
+  "keywords": [
+    "pharmaceutical",
+    "testing",
+    "trading",
+    "quality assurance"
+  ],
+  "author": "Sree Deeshika Labs",
+  "license": "Proprietary",
+  "dependencies": {
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}

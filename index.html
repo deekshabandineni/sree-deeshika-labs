@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sree Deeshika Labs - Comprehensive pharmaceutical testing and distribution services. ISO certified quality assurance and product trading.">
+    <meta name="keywords" content="pharmaceutical testing, pharma trading, quality assurance, drug testing, ISO certified, Hyderabad">
+    <title>Sree Deeshika Labs - Pharmaceutical Testing & Trading</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #003d7a;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #003d7a;
+        }
+
+        .btn-contact {
+            background: #003d7a;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-contact:hover {
+            background: #002847;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #003d7a 0%, #0066cc 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #003d7a;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #003d7a;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #003d7a;
+        }
+
+        section h3 {
+            font-size: 1.3rem;
+            color: #003d7a;
+            margin-bottom: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            margin-bottom: 2rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            background: #f5f5f5;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #003d7a;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .about-image {
+            background: #e0e0e0;
+            border-radius: 10px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+
+        /* Products Section */
+        .products {
+            background: #f9f9f9;
+        }
+
+        .products-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .products-table th {
+            background: #003d7a;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .products-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .products-table tr:hover {
+            background: #f5f5f5;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Infrastructure/Facilities */
+        .infrastructure {
+            background: #f9f9f9;
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .facility-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .facility-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-items {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #003d7a;
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #003d7a;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item h4 {
+            color: #003d7a;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .timeline-item li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-item li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #003d7a;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #f9f9f9;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #003d7a;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #003d7a;
+            box-shadow: 0 0 5px rgba(0,61,122,0.2);
+        }
+
+        .submit-btn {
+            background: #003d7a;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #002847;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            margin-bottom: 2rem;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #003d7a;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-value {
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: #003d7a;
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid,
+            .facility-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-items {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo">SDL</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#trading">Products</a></li>
+                <li><a href="#infrastructure">Infrastructure</a></li>
+                <li><a href="#quality">Quality</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#contact" class="btn-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p style="font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem;">Quality Assurance Since 2010</p>
+            <h1>Sree Deeshika Labs</h1>
+            <p>Comprehensive pharmaceutical testing and distribution services with ISO certification and advanced analytical capabilities.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">Explore Services</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about">
+            <div class="about-content">
+                <h2>Excellence in Pharmaceutical Quality</h2>
+                <p>Founded in 2010, Sree Deeshika Labs has established itself as a trusted partner for pharmaceutical testing and distribution across India and internationally.</p>
+                <p>We provide comprehensive quality assurance services for API manufacturers, pharmaceutical companies, and distributors, ensuring compliance with international standards including GMP, USP, and BP.</p>
+                <p>Our team of experienced analysts and quality professionals work with state-of-the-art analytical instruments to deliver accurate, reliable results that support your business decisions.</p>
+                <a href="#" style="color: #003d7a; text-decoration: none; font-weight: 600;">Learn Our Story →</a>
+            </div>
+            <div class="about-image">
+                <div style="text-align: center;">
+                    <div style="font-size: 4rem;">🔬</div>
+                    <p>Laboratory Facilities</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">14+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Products Tested</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Active Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">25</div>
+                <div class="stat-label">Countries Served</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Testing Services</h2>
+        <p style="margin-bottom: 2rem; color: #666; font-size: 1.1rem;">Comprehensive pharmaceutical testing and quality assurance solutions</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>📊 API Testing</h3>
+                <p>Complete analysis of Active Pharmaceutical Ingredients including purity, potency, and contaminant detection using advanced chromatography techniques.</p>
+            </div>
+            <div class="service-card">
+                <h3>💊 Formulation Analysis</h3>
+                <p>End-to-end testing of finished pharmaceutical products for dissolution, content uniformity, and stability profile assessment.</p>
+            </div>
+            <div class="service-card">
+                <h3>🧪 Impurity Profiling</h3>
+                <p>Detailed characterization of organic and inorganic impurities using HPLC, GC, and ICP-OES methods.</p>
+            </div>
+            <div class="service-card">
+                <h3>📋 Method Development</h3>
+                <p>Custom analytical method development and validation services tailored to your specific product requirements.</p>
+            </div>
+            <div class="service-card">
+                <h3>⏱️ Stability Testing</h3>
+                <p>Long-term and accelerated stability studies under controlled conditions per ICH guidelines.</p>
+            </div>
+            <div class="service-card">
+                <h3>🔍 Microbial Testing</h3>
+                <p>Comprehensive microbiological analysis including microbial limit tests, sterility testing, and endotoxin detection.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trading Products Section -->
+    <section id="trading" class="products">
+        <h2>Pharmaceutical Products - Trading Division</h2>
+        <p style="margin-bottom: 2rem; color: #666; font-size: 1.1rem;">Sourcing and distribution of quality pharmaceutical intermediates and excipients</p>
+        
+        <table class="products-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Grade/Purity</th>
+                    <th>Application</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Paracetamol Intermediate</td>
+                    <td>Pharmaceutical Intermediate</td>
+                    <td>99.5%</td>
+                    <td>Analgesic/Antipyretic</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Ibuprofen Precursor</td>
+                    <td>Pharmaceutical Intermediate</td>
+                    <td>99.8%</td>
+                    <td>NSAID</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Atenolol Base</td>
+                    <td>Pharmaceutical Intermediate</td>
+                    <td>99.2%</td>
+                    <td>Beta-blocker</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Metformin Hydrochloride</td>
+                    <td>Active Ingredient</td>
+                    <td>99.9%</td>
+                    <td>Antidiabetic</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Cetirizine Dihydrochloride</td>
+                    <td>Active Ingredient</td>
+                    <td>99.5%</td>
+                    <td>Antihistamine</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Microcrystalline Cellulose</td>
+                    <td>Pharmaceutical Excipient</td>
+                    <td>BP/USP</td>
+                    <td>Binder/Filler</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Magnesium Stearate</td>
+                    <td>Pharmaceutical Excipient</td>
+                    <td>BP/USP</td>
+                    <td>Lubricant</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Sodium Carboxymethyl Cellulose</td>
+                    <td>Pharmaceutical Excipient</td>
+                    <td>USP</td>
+                    <td>Disintegrant</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="margin-top: 2rem; color: #666; text-align: center;">Contact us for complete product catalog and bulk pricing inquiries</p>
+    </section>
+
+    <!-- Infrastructure Section -->
+    <section id="infrastructure" class="infrastructure">
+        <h2>State-of-the-Art Facilities</h2>
+        <p style="margin-bottom: 2rem; color: #666; font-size: 1.1rem;">Advanced laboratory infrastructure for accurate and reliable testing</p>
+        
+        <div class="facility-grid">
+            <div class="facility-item">
+                <div class="facility-icon">🔬</div>
+                <h3 style="font-size: 1.1rem;">HPLC Laboratory</h3>
+                <p style="font-size: 0.95rem; color: #666;">Multiple HPLC systems for separation and quantification analysis</p>
+            </div>
+            <div class="facility-item">
+                <div class="facility-icon">⚗️</div>
+                <h3 style="font-size: 1.1rem;">GC Laboratory</h3>
+                <p style="font-size: 0.95rem; color: #666;">Gas chromatography with FID and MS detectors</p>
+            </div>
+            <div class="facility-item">
+                <div class="facility-icon">📈</div>
+                <h3 style="font-size: 1.1rem;">QA/QC Block</h3>
+                <p style="font-size: 0.95rem; color: #666;">Comprehensive quality control testing facilities</p>
+            </div>
+            <div class="facility-item">
+                <div class="facility-icon">❄️</div>
+                <h3 style="font-size: 1.1rem;">Stability Chambers</h3>
+                <p style="font-size: 0.95rem; color: #666;">Climate-controlled storage for stability studies</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Certifications -->
+    <section id="quality">
+        <h2>Quality Assurance & Certifications</h2>
+        <p style="margin-bottom: 3rem; color: #666; font-size: 1.1rem;">Committed to the highest standards of quality and compliance</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>✓ ISO 17025</h3>
+                <p>Accredited testing laboratory meeting international standards for competence and impartiality.</p>
+            </div>
+            <div class="service-card">
+                <h3>✓ ISO 9001:2015</h3>
+                <p>Quality management system ensuring consistent delivery of reliable test results.</p>
+            </div>
+            <div class="service-card">
+                <h3>✓ GMP Compliance</h3>
+                <p>Operations comply with Good Manufacturing Practice guidelines for pharmaceutical products.</p>
+            </div>
+            <div class="service-card">
+                <h3>✓ USP/BP Standards</h3>
+                <p>Testing methodologies aligned with United States and British Pharmacopeias.</p>
+            </div>
+            <div class="service-card">
+                <h3>✓ ICH Guidelines</h3>
+                <p>International Council for Harmonisation standards for pharmaceutical development.</p>
+            </div>
+            <div class="service-card">
+                <h3>✓ NABL Recognized</h3>
+                <p>Recognized by National Accreditation Board for Laboratory Testing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey/Timeline Section -->
+    <section id="journey">
+        <h2>Our Journey</h2>
+        <p style="margin-bottom: 2rem; color: #666; font-size: 1.1rem;">Milestones of growth and excellence</p>
+        
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-year">2010</div>
+                <h4>Founded</h4>
+                <ul>
+                    <li>Laboratory establishment</li>
+                    <li>Initial HPLC setup</li>
+                    <li>10 technical staff</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2013</div>
+                <h4>ISO Certification</h4>
+                <ul>
+                    <li>ISO 17025 accreditation</li>
+                    <li>Expanded testing capacity</li>
+                    <li>20 employees</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2017</div>
+                <h4>Trading Division</h4>
+                <ul>
+                    <li>Pharmaceutical distribution</li>
+                    <li>Product sourcing network</li>
+                    <li>International expansion</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <h4>Digital Transformation</h4>
+                <ul>
+                    <li>Advanced automation</li>
+                    <li>LIMS implementation</li>
+                    <li>50+ team members</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <p style="margin-bottom: 2rem; color: #666; font-size: 1.1rem;">We're ready to discuss your pharmaceutical testing and trading needs</p>
+        
+        <div class="contact-content">
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Interest *</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Select Service --</option>
+                        <option value="api-testing">API Testing</option>
+                        <option value="formulation">Formulation Analysis</option>
+                        <option value="impurity">Impurity Profiling</option>
+                        <option value="method">Method Development</option>
+                        <option value="stability">Stability Testing</option>
+                        <option value="microbial">Microbial Testing</option>
+                        <option value="trading">Product Trading</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Enquiry</button>
+            </form>
+
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="info-item">
+                    <div class="info-label">Address</div>
+                    <div class="info-value">
+                        Sree Deeshika Labs<br>
+                        Hyderabad, Telangana<br>
+                        India - 500084
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Phone</div>
+                    <div class="info-value">
+                        <a href="tel:+919999999999" style="color: #666; text-decoration: none;">+91 9999 999 999</a>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Email</div>
+                    <div class="info-value">
+                        <a href="mailto:info@sreedeeshikalabs.com" style="color: #666; text-decoration: none;">info@sreedeeshikalabs.com</a>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Business Hours</div>
+                    <div class="info-value">
+                        Monday - Friday: 9:00 AM - 6:00 PM<br>
+                        Saturday: 10:00 AM - 2:00 PM<br>
+                        Sunday: Closed
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sree Deeshika Labs</h4>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">Trusted pharmaceutical testing and distribution partner since 2010. Serving pharmaceutical companies, APIs manufacturers, and distributors with quality assurance and product trading solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#trading">Products</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#services">API Testing</a>
+                <a href="#services">Quality Analysis</a>
+                <a href="#trading">Product Trading</a>
+                <a href="#services">Method Development</a>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Careers</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sree Deeshika Labs Pvt Ltd. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your enquiry! We will contact you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
